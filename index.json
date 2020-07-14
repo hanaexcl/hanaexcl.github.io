@@ -1,0 +1,19 @@
+[{
+    "title": "PuTTy連線到Vultr ubuntu Server",
+    "date": "July 14, 2020",
+    "description": "",
+    "body": "步驟一 製作金鑰 開啟伺服器的控制網頁，並開啟主控台。\n登入主控台，帳密在Overview分頁。\n輸入ssh-keygen -t rsa，存檔路徑及密碼都直接Enter。\n輸入cd .ssh移動到.SSH資料夾，並輸入mv id_rsa.pub authorized_keys，把id_rsa.pub改名成authorized_keys。\n輸入sudo systemctl restart ssh.service，重新啟動ssh service。\n步驟二 轉換PPK 用WinSCP連接到伺服器，帳密一樣在Overview分頁。\n進入.ssh資料夾。\n下載id_rsa檔案。\n開啟PuTTygen，Load剛剛下載的id_rsa。(檔案類型需改成All)\n點選Save private Key。\n會問你是否不使用密碼，點是。\n保存剛才產生的PPK檔案。\n步驟三 連接SERVER 輸入伺服器的IP。\n載入剛才做出來的PPK檔案。\nOPEN!\n輸入root，然後Enter，就登入進去囉。\n",
+    "ref": "/post/vultr/putty-login/"
+  },{
+    "title": "PuTTy連線到Amazon Lightsail ubuntu Server",
+    "date": "July 12, 2020",
+    "description": "",
+    "body": "步驟一 下載PEM 開啟 設定SSH金鑰，下載該主機對應的地區金錀。\n步驟二 轉換PPK 開啟PuTTygen，Load剛剛下載的pem檔案。(檔案類型需改成All)\n點選Save private Key。\n會問你是否不使用密碼，點是。\n保存剛才產生的PPK檔案。\n步驟三 連接SERVER 輸入伺服器的公有IP。\n載入剛才做出來的PPK檔案。\nOPEN!\n輸入用戶名，然後Enter，就登入進去囉。(用戶名可參考下方)\n Amazon Linux、openSUSE 和 FreeBSD： ec2-user CentOS AMI： centos Debian AMI： admin or root Fedora AMI： ec2-user or fedora RHEL AMI： ec2-user or root SUSE AMI： ec2-user or root Ubuntu AMI： ubuntu  ",
+    "ref": "/post/amazon-lightsail/putty-login/"
+  },{
+    "title": "About",
+    "date": "February 28, 2019",
+    "description": "一個喜歡動手做東西的大學生",
+    "body": "畢業於IBBT論壇，國小到現在也Coding快10年了，從軟的到硬的無所不玩，一路上跌跌撞撞，雖然傷痕累累，但也收益良多，感謝一直以來提供幫助的網友，也感謝家人的支持。\n使用語言：\n VB6 VB NET C# C++ PHP Arduino  開發經驗：\n Esp8266雲端鐵捲門 Github 威天宮網站 Web 拉麵旅路 Web LineBot 機器人 直播網頁自動留言軟體 Line@ 自動推廣軟體  ",
+    "ref": "/about/"
+  }]

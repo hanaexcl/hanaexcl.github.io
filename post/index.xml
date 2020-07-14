@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Post on 踩坑日記</title>
+    <link>http://hana.github.io/post/</link>
+    <description>Recent content in Post on 踩坑日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Tue, 14 Jul 2020 13:51:26 +0800</lastBuildDate>
+    
+	<atom:link href="http://hana.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PuTTy連線到Vultr ubuntu Server</title>
+      <link>http://hana.github.io/post/vultr/putty-login/</link>
+      <pubDate>Tue, 14 Jul 2020 13:51:26 +0800</pubDate>
+      
+      <guid>http://hana.github.io/post/vultr/putty-login/</guid>
+      <description>步驟一 製作金鑰 開啟伺服器的控制網頁，並開啟主控台。
+登入主控台，帳密在Overview分頁。
+輸入ssh-keygen -t rsa，存檔路徑及密碼都直接Enter。
+輸入cd .ssh移動到.SSH資料夾，並輸入mv id_rsa.pub authorized_keys，把id_rsa.pub改名成authorized_keys。
+輸入sudo systemctl restart ssh.service，重新啟動ssh service。
+步驟二 轉換PPK 用WinSCP連接到伺服器，帳密一樣在Overview分頁。
+進入.ssh資料夾。
+下載id_rsa檔案。
+開啟PuTTygen，Load剛剛下載的id_rsa。(檔案類型需改成All)
+點選Save private Key。
+會問你是否不使用密碼，點是。
+保存剛才產生的PPK檔案。
+步驟三 連接SERVER 輸入伺服器的IP。
+載入剛才做出來的PPK檔案。
+OPEN!
+輸入root，然後Enter，就登入進去囉。</description>
+    </item>
+    
+    <item>
+      <title>PuTTy連線到Amazon Lightsail ubuntu Server</title>
+      <link>http://hana.github.io/post/amazon-lightsail/putty-login/</link>
+      <pubDate>Sun, 12 Jul 2020 20:40:00 +0800</pubDate>
+      
+      <guid>http://hana.github.io/post/amazon-lightsail/putty-login/</guid>
+      <description>步驟一 下載PEM 開啟 設定SSH金鑰，下載該主機對應的地區金錀。
+步驟二 轉換PPK 開啟PuTTygen，Load剛剛下載的pem檔案。(檔案類型需改成All)
+點選Save private Key。
+會問你是否不使用密碼，點是。
+保存剛才產生的PPK檔案。
+步驟三 連接SERVER 輸入伺服器的公有IP。
+載入剛才做出來的PPK檔案。
+OPEN!
+輸入用戶名，然後Enter，就登入進去囉。(用戶名可參考下方)
+ Amazon Linux、openSUSE 和 FreeBSD： ec2-user CentOS AMI： centos Debian AMI： admin or root Fedora AMI： ec2-user or fedora RHEL AMI： ec2-user or root SUSE AMI： ec2-user or root Ubuntu AMI： ubuntu  </description>
+    </item>
+    
+  </channel>
+</rss>

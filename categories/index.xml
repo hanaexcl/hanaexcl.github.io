@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 踩坑日記</title>
+    <link>http://hana.github.io/categories/</link>
+    <description>Recent content in Categories on 踩坑日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Tue, 14 Jul 2020 13:51:26 +0800</lastBuildDate>
+    
+	<atom:link href="http://hana.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Putty</title>
+      <link>http://hana.github.io/categories/putty/</link>
+      <pubDate>Tue, 14 Jul 2020 13:51:26 +0800</pubDate>
+      
+      <guid>http://hana.github.io/categories/putty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vultr</title>
+      <link>http://hana.github.io/categories/vultr/</link>
+      <pubDate>Tue, 14 Jul 2020 13:51:26 +0800</pubDate>
+      
+      <guid>http://hana.github.io/categories/vultr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Amazon Lightsail</title>
+      <link>http://hana.github.io/categories/amazon-lightsail/</link>
+      <pubDate>Sun, 12 Jul 2020 20:40:00 +0800</pubDate>
+      
+      <guid>http://hana.github.io/categories/amazon-lightsail/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
