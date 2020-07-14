@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Post on 踩坑日記</title>
-    <link>http://hana.github.io/post/</link>
+    <link>https://hanaexcl.github.io/post/</link>
     <description>Recent content in Post on 踩坑日記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
     <lastBuildDate>Tue, 14 Jul 2020 13:51:26 +0800</lastBuildDate>
     
-	<atom:link href="http://hana.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hanaexcl.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PuTTy連線到Vultr ubuntu Server</title>
-      <link>http://hana.github.io/post/vultr/putty-login/</link>
+      <link>https://hanaexcl.github.io/post/vultr/putty-login/</link>
       <pubDate>Tue, 14 Jul 2020 13:51:26 +0800</pubDate>
       
-      <guid>http://hana.github.io/post/vultr/putty-login/</guid>
+      <guid>https://hanaexcl.github.io/post/vultr/putty-login/</guid>
       <description>步驟一 製作金鑰 開啟伺服器的控制網頁，並開啟主控台。
 登入主控台，帳密在Overview分頁。
 輸入ssh-keygen -t rsa，存檔路徑及密碼都直接Enter。
@@ -37,10 +37,10 @@ OPEN!
     
     <item>
       <title>PuTTy連線到Amazon Lightsail ubuntu Server</title>
-      <link>http://hana.github.io/post/amazon-lightsail/putty-login/</link>
+      <link>https://hanaexcl.github.io/post/amazon-lightsail/putty-login/</link>
       <pubDate>Sun, 12 Jul 2020 20:40:00 +0800</pubDate>
       
-      <guid>http://hana.github.io/post/amazon-lightsail/putty-login/</guid>
+      <guid>https://hanaexcl.github.io/post/amazon-lightsail/putty-login/</guid>
       <description>步驟一 下載PEM 開啟 設定SSH金鑰，下載該主機對應的地區金錀。
 步驟二 轉換PPK 開啟PuTTygen，Load剛剛下載的pem檔案。(檔案類型需改成All)
 點選Save private Key。
