@@ -6,10 +6,46 @@
     <description>Recent content in Categories on 踩坑日記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 14 Jul 2020 13:51:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2020 19:44:35 +0800</lastBuildDate>
     
 	<atom:link href="https://hanaexcl.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWS</title>
+      <link>https://hanaexcl.github.io/categories/aws/</link>
+      <pubDate>Fri, 17 Jul 2020 19:44:35 +0800</pubDate>
+      
+      <guid>https://hanaexcl.github.io/categories/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EC2</title>
+      <link>https://hanaexcl.github.io/categories/ec2/</link>
+      <pubDate>Fri, 17 Jul 2020 19:44:35 +0800</pubDate>
+      
+      <guid>https://hanaexcl.github.io/categories/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laravel</title>
+      <link>https://hanaexcl.github.io/categories/laravel/</link>
+      <pubDate>Fri, 17 Jul 2020 19:44:35 +0800</pubDate>
+      
+      <guid>https://hanaexcl.github.io/categories/laravel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WinSCP</title>
+      <link>https://hanaexcl.github.io/categories/winscp/</link>
+      <pubDate>Fri, 17 Jul 2020 19:10:16 +0800</pubDate>
+      
+      <guid>https://hanaexcl.github.io/categories/winscp/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Putty</title>

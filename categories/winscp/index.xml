@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WinSCP on 踩坑日記</title>
+    <link>https://hanaexcl.github.io/categories/winscp/</link>
+    <description>Recent content in WinSCP on 踩坑日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Fri, 17 Jul 2020 19:10:16 +0800</lastBuildDate>
+    
+	<atom:link href="https://hanaexcl.github.io/categories/winscp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EC2 SFTP 寫入權限不足</title>
+      <link>https://hanaexcl.github.io/post/aws/ec2/sftp-permission/</link>
+      <pubDate>Fri, 17 Jul 2020 19:10:16 +0800</pubDate>
+      
+      <guid>https://hanaexcl.github.io/post/aws/ec2/sftp-permission/</guid>
+      <description>登入EC2所使用的ec2-user帳戶是一般帳戶，大部分的資料夾都是root的，所以上傳資料時可能遇到權限不足的問題。
+這時只要輸入下面命令，就能讓ec2-user用戶有權限讀寫/var/www/html資料夾。
+ chown -R ec2-user /var/www/html
+ </description>
+    </item>
+    
+  </channel>
+</rss>

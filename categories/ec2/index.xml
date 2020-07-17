@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EC2 on 踩坑日記</title>
+    <link>https://hanaexcl.github.io/categories/ec2/</link>
+    <description>Recent content in EC2 on 踩坑日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Fri, 17 Jul 2020 19:44:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://hanaexcl.github.io/categories/ec2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EC2快速安裝Laravel6</title>
+      <link>https://hanaexcl.github.io/post/aws/ec2/quick-laravel6/</link>
+      <pubDate>Fri, 17 Jul 2020 19:44:35 +0800</pubDate>
+      
+      <guid>https://hanaexcl.github.io/post/aws/ec2/quick-laravel6/</guid>
+      <description>一直以來都習慣有GUI的系統，最近幫客戶更新Magento的時候慢慢發現指令的魅力，下幾條命令就能搞定很多東西，決定來玩玩看在EC2上安裝Laravel6。
+這邊所使用的是Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type系統。
+步驟一 安裝PHP  安裝PHP 7.3
+sudo yum install php73;php -v 安裝Laravel所需的擴展
+sudo yum install php73-mbstring php73-bcmath
+sudo yum install php73-pdo php73-mysqlnd php73-gd.x86_64  步驟二 安裝Apache  安裝Apache
+sudo yum install httpd24 啟動Apache
+sudo service httpd start  現在應該能看到網站正常運作了。
+步驟三 安裝composer  切換root帳戶
+sudo su 進入html資料夾
+cd var/www/html/ 安裝wget
+yum install wget -y 下載composer
+wget https://getcomposer.org/composer.phar 確認composer是否安裝成功
+php composer.phar  步驟四 安裝Laravel6  安裝Laravel</description>
+    </item>
+    
+    <item>
+      <title>EC2 SFTP 寫入權限不足</title>
+      <link>https://hanaexcl.github.io/post/aws/ec2/sftp-permission/</link>
+      <pubDate>Fri, 17 Jul 2020 19:10:16 +0800</pubDate>
+      
+      <guid>https://hanaexcl.github.io/post/aws/ec2/sftp-permission/</guid>
+      <description>登入EC2所使用的ec2-user帳戶是一般帳戶，大部分的資料夾都是root的，所以上傳資料時可能遇到權限不足的問題。
+這時只要輸入下面命令，就能讓ec2-user用戶有權限讀寫/var/www/html資料夾。
+ chown -R ec2-user /var/www/html
+ </description>
+    </item>
+    
+  </channel>
+</rss>

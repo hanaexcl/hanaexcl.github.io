@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>EC2快速安裝Laravel6 - 踩坑日記</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.73.0" /><meta itemprop="name" content="EC2快速安裝Laravel6">
+<meta itemprop="description" content="一直以來都習慣有GUI的系統，最近幫客戶更新Magento的時候慢慢發現指令的魅力，下幾條命令就能搞定很多東西，決定來玩玩看在EC2上安裝Laravel6。
+這邊所使用的是Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type系統。
+步驟一 安裝PHP  安裝PHP 7.3
+sudo yum install php73;php -v 安裝Laravel所需的擴展
+sudo yum install php73-mbstring php73-bcmath
+sudo yum install php73-pdo php73-mysqlnd php73-gd.x86_64  步驟二 安裝Apache  安裝Apache
+sudo yum install httpd24 啟動Apache
+sudo service httpd start  現在應該能看到網站正常運作了。
+步驟三 安裝composer  切換root帳戶
+sudo su 進入html資料夾
+cd var/www/html/ 安裝wget
+yum install wget -y 下載composer
+wget https://getcomposer.org/composer.phar 確認composer是否安裝成功
+php composer.phar  步驟四 安裝Laravel6  安裝Laravel">
+<meta itemprop="datePublished" content="2020-07-17T19:44:35&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-17T19:44:35&#43;08:00" />
+<meta itemprop="wordCount" content="103">
+
+
+
+<meta itemprop="keywords" content="" /><meta property="og:title" content="EC2快速安裝Laravel6" />
+<meta property="og:description" content="一直以來都習慣有GUI的系統，最近幫客戶更新Magento的時候慢慢發現指令的魅力，下幾條命令就能搞定很多東西，決定來玩玩看在EC2上安裝Laravel6。
+這邊所使用的是Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type系統。
+步驟一 安裝PHP  安裝PHP 7.3
+sudo yum install php73;php -v 安裝Laravel所需的擴展
+sudo yum install php73-mbstring php73-bcmath
+sudo yum install php73-pdo php73-mysqlnd php73-gd.x86_64  步驟二 安裝Apache  安裝Apache
+sudo yum install httpd24 啟動Apache
+sudo service httpd start  現在應該能看到網站正常運作了。
+步驟三 安裝composer  切換root帳戶
+sudo su 進入html資料夾
+cd var/www/html/ 安裝wget
+yum install wget -y 下載composer
+wget https://getcomposer.org/composer.phar 確認composer是否安裝成功
+php composer.phar  步驟四 安裝Laravel6  安裝Laravel" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hanaexcl.github.io/post/aws/ec2/quick-laravel6/" />
+<meta property="article:published_time" content="2020-07-17T19:44:35+08:00" />
+<meta property="article:modified_time" content="2020-07-17T19:44:35+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="EC2快速安裝Laravel6"/>
+<meta name="twitter:description" content="一直以來都習慣有GUI的系統，最近幫客戶更新Magento的時候慢慢發現指令的魅力，下幾條命令就能搞定很多東西，決定來玩玩看在EC2上安裝Laravel6。
+這邊所使用的是Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type系統。
+步驟一 安裝PHP  安裝PHP 7.3
+sudo yum install php73;php -v 安裝Laravel所需的擴展
+sudo yum install php73-mbstring php73-bcmath
+sudo yum install php73-pdo php73-mysqlnd php73-gd.x86_64  步驟二 安裝Apache  安裝Apache
+sudo yum install httpd24 啟動Apache
+sudo service httpd start  現在應該能看到網站正常運作了。
+步驟三 安裝composer  切換root帳戶
+sudo su 進入html資料夾
+cd var/www/html/ 安裝wget
+yum install wget -y 下載composer
+wget https://getcomposer.org/composer.phar 確認composer是否安裝成功
+php composer.phar  步驟四 安裝Laravel6  安裝Laravel"/>
+<link rel="stylesheet" href="/css/bundle.min.759e3848ea529eef056dab665b241e2af569e601ab80f68f8d4a4d002a155dd4.css" integrity="sha256-dZ44SOpSnu8FbatmWyQeKvVp5gGrgPaPjUpNACoVXdQ="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          
+            post
+          
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          
+            <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+          
+        
+      
+      <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="nav lang-toggle" lang="zh-tw">zh-tw</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="zh-tw" class="nav link active">中文 (zh-tw)</a>
+  
+    
+      
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=EC2%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%9dLaravel6&amp;url=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f&amp;title=EC2%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%9dLaravel6" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f&amp;title=EC2%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%9dLaravel6" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f&amp;description=EC2%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%9dLaravel6" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 Hana&amp;body=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://hanaexcl.github.io/img/main/logo.jpg" class="circle" width="" alt="HANAの手帳" /></a>
+  <header>
+    <h1>HANAの手帳</h1>
+  </header>
+  <main>
+    <p>摳過就忘，只好做筆記</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/hanaexcl" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:hanaexcl@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/post/aws/ec2/quick-laravel6/">EC2快速安裝Laravel6</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time class="published" datetime="2020-07-17 19:44:35 &#43;0800 CST">
+      July 17, 2020
+    </time>
+    <span class="author">Hana</span>
+    
+      <p>1 分鐘</p>
+    
+  </div>
+</header>
+
+    <section id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=EC2%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%9dLaravel6&amp;url=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f&amp;title=EC2%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%9dLaravel6" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f&amp;title=EC2%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%9dLaravel6" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f&amp;description=EC2%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%9dLaravel6" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 Hana&amp;body=https%3a%2f%2fhanaexcl.github.io%2fpost%2faws%2fec2%2fquick-laravel6%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </section>
+    
+
+    <div class="content">
+      <p>一直以來都習慣有GUI的系統，最近幫客戶更新Magento的時候慢慢發現指令的魅力，下幾條命令就能搞定很多東西，決定來玩玩看在EC2上安裝Laravel6。</p>
+<p>這邊所使用的是<code>Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type</code>系統。</p>
+<h2 id="步驟一-安裝php">步驟一 安裝PHP</h2>
+<ul>
+<li>安裝PHP 7.3<br>
+<code>sudo yum install php73;php -v</code></li>
+<li>安裝Laravel所需的擴展<br>
+<code>sudo yum install php73-mbstring php73-bcmath</code><br>
+<code>sudo yum install php73-pdo php73-mysqlnd php73-gd.x86_64</code></li>
+</ul>
+<h2 id="步驟二-安裝apache">步驟二 安裝Apache</h2>
+<ul>
+<li>安裝Apache<br>
+<code>sudo yum install httpd24</code></li>
+<li>啟動Apache<br>
+<code>sudo service httpd start</code></li>
+</ul>
+<p>現在應該能看到網站正常運作了。<br>
+<img src="/img/AWS/EC2/Quick-Laravel6/1.jpg" alt="Web"></p>
+<h2 id="步驟三-安裝composer">步驟三 安裝composer</h2>
+<ul>
+<li>切換root帳戶<br>
+<code>sudo su</code></li>
+<li>進入html資料夾<br>
+<code>cd var/www/html/</code></li>
+<li>安裝wget<br>
+<code>yum install wget -y</code></li>
+<li>下載composer<br>
+<code>wget https://getcomposer.org/composer.phar</code></li>
+<li>確認composer是否安裝成功<br>
+<code>php composer.phar</code></li>
+</ul>
+<h2 id="步驟四-安裝laravel6">步驟四 安裝Laravel6</h2>
+<ul>
+<li>安裝Laravel<br>
+<code>php composer.phar create-project --prefer-dist laravel/laravel MyLaravel &quot;6.*&quot;</code></li>
+<li>修改網站路徑
+<ul>
+<li>編輯httpd.conf<br>
+<code>vi /etc/httpd/conf/httpd.conf</code></li>
+<li>最下面新增</li>
+</ul>
+<pre><code>Alias / /var/www/html/MyLaravel/public/
+&lt;Directory &quot;/var/www/html/MyLaravel/public&quot;&gt;
+AllowOverride All
+Order allow,deny
+  allow from all
+&lt;/Directory&gt;
+</code></pre></li>
+<li>進入MyLaravel目錄<br>
+<code>cd MyLaravel</code></li>
+<li>給storage權限<br>
+<code>chmod -R 777 storage</code></li>
+<li>重啟伺服器<br>
+<code>service httpd restart</code></li>
+</ul>
+<p>大功告成。<br>
+<img src="/img/AWS/EC2/Quick-Laravel6/2.jpg" alt="Web"></p>
+
+    </div>
+    <footer>
+      <ul class="stats">
+  <li class="categories">
+    <ul>
+    
+      
+        
+          <li><a class="article-terms-link" href="/categories/aws/">AWS</a></li>
+        
+          <li><a class="article-terms-link" href="/categories/ec2/">EC2</a></li>
+        
+          <li><a class="article-terms-link" href="/categories/laravel/">Laravel</a></li>
+        
+      
+    
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+    
+      
+    
+    </ul>
+  </li>
+</ul>
+
+    </footer>
+  </article>
+  
+
+  <div class="pagination">
+  
+    <a href="/post/aws/ec2/sftp-permission/" class="button"><div class="previous"><div>EC2 SFTP 寫入權限不足</div></div></a>
+  
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最新文章</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="/post/aws/ec2/quick-laravel6/">EC2快速安裝Laravel6</a></h2>
+          <time class="published" datetime="">July 17, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="/post/aws/ec2/sftp-permission/">EC2 SFTP 寫入權限不足</a></h2>
+          <time class="published" datetime="">July 17, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="/post/vultr/putty-login/">PuTTy連線到Vultr ubuntu Server</a></h2>
+          <time class="published" datetime="">July 14, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h2><a href="/post/amazon-lightsail/putty-login/">PuTTy連線到Amazon Lightsail ubuntu Server</a></h2>
+          <time class="published" datetime="">July 12, 2020</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">分類</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="/categories/aws/">aws<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/ec2/">ec2<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/putty/">putty<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/amazon-lightsail/">amazon-lightsail<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/laravel/">laravel<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/vultr/">vultr<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/winscp/">winscp<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>關於</h1>
+      </header>
+      <p>一路過來，Google不離不棄 </p>
+      <footer>
+        <a href="/about" class="button">了解更多</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/hanaexcl" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:hanaexcl@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        踩坑日記
+      
+    . <br>
+    主題: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>移植自 <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | 由 <a href='https://gohugo.io/' target='_blank' rel='noopener' title='0.73.0'>Hugo</a> 提供
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.6e35d4324d362434d22f4c7ec8bbad8a202961ae2cf0aa6bf6cfc5ede3d2a7e7.js" integrity="sha256-bjXUMk02JDTSL0x&#43;yLutiiApYa4s8Kpr9s/F7ePSp&#43;c="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>
